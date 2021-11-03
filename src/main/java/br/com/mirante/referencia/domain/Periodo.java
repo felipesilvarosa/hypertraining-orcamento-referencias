@@ -2,6 +2,8 @@ package br.com.mirante.referencia.domain;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -17,7 +19,8 @@ public class Periodo implements Serializable {
     private Float valor;
 
     @ManyToOne
-    @JoinColumn(name = "codigo_fk", nullable = false)
+    @JoinColumn(name = "codigo_fk")
+    @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonBackReference
     private ItemReferencia item;
 
