@@ -21,7 +21,7 @@ public class ItemReferencia implements Serializable{
     @Column(name ="unidade_medida")
     private String unidadeMedida;
 
-    @OneToMany(mappedBy = "item")
+    @OneToMany(mappedBy = "item", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
     private List<Periodo> periodos;
 
