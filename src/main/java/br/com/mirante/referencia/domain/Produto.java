@@ -1,39 +1,25 @@
 package br.com.mirante.referencia.domain;
 
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import org.hibernate.annotations.Cascade;
-
-import javax.persistence.*;
 import java.io.Serializable;
-import java.util.List;
 
-@Entity
-@Table(name = "item")
-public class ItemReferencia implements Serializable{
+public class Produto implements Serializable {
 
-    @Id
+    private static final long serialVersionUID = 1L;
+
+    private String origem;
     private String codigo;
     private String descricao;
-    private String origem;
-
-    @Column(name ="unidade_medida")
     private String unidadeMedida;
+    private Float valor;
 
-    @OneToMany(mappedBy = "item", orphanRemoval = true, cascade = CascadeType.REMOVE)
-    @JsonManagedReference
-    private List<Periodo> periodos;
-
-
-    public ItemReferencia(String codigo, String descricao, String origem, String unidadeMedida) {
+    public Produto(String origem, String codigo, String descricao, String unidadeMedida, Float valor) {
+        this.origem = origem;
         this.codigo = codigo;
         this.descricao = descricao;
-        this.origem = origem;
         this.unidadeMedida = unidadeMedida;
+        this.valor = valor;
     }
-
-    protected ItemReferencia(){}
 
     public String getOrigem() {
         return origem;
@@ -67,11 +53,13 @@ public class ItemReferencia implements Serializable{
         this.unidadeMedida = unidadeMedida;
     }
 
-    public List<Periodo> getPeriodos() {
-        return periodos;
+
+
+    public Float getValor() {
+        return valor;
     }
 
-    public void setPeriodos(List<Periodo> periodos) {
-        this.periodos = periodos;
+    public void setValor(Float valor) {
+        this.valor = valor;
     }
 }
