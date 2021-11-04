@@ -6,9 +6,7 @@ import br.com.mirante.referencia.domain.Referencia;
 import br.com.mirante.referencia.service.CadastrarProdutoService;
 import br.com.mirante.referencia.service.ListarProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.Map;
 
@@ -29,6 +27,7 @@ public class ProdutoController {
 
     @GetMapping
     public Map<String, Produto> listarProdutos(){
+
         return listarProdutoService.listarProdutos();
     }
 }

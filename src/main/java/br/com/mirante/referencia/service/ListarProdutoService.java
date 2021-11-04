@@ -19,7 +19,9 @@ public class ListarProdutoService {
     public Map<String, Produto> listarProdutos(){
 
         List<ProdutoDB> produtosDb = produtoRepository.listar();
+
         Map<String, Produto> mapProdutos = new HashMap<>();
+
         for(ProdutoDB produtoDb : produtosDb){
             List<Referencia> referencias = produtoDb.getReferencias();
             for(Referencia referencia : referencias){
