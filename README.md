@@ -1,5 +1,3 @@
-﻿# Budget-references
-
 # Hypertraining - Budget control - Referances
 
 ### Description
