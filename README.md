@@ -8,10 +8,10 @@
 
 ### Technologies
 
--Java 17
--Spring Boot
--Hibernate
--JPA
--Jacoco
--Maven
--JUnit
+- Java 17
+- Spring Boot
+- Hibernate
+- JPA
+- Jacoco
+- Maven
+- JUnit
